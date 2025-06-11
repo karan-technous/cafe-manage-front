@@ -1,0 +1,45 @@
+.userInfoBtn {
+    cursor: pointer;
+    background-color: var(--primary-color-dark-red);
+    padding: 5px 10px;
+    border-radius: 6px;
+    color: var(--primary-color-red);
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navbarBg {
+    background: var(--primary-bg-navbar);
+}
+
+.cafeLogo {
+    font-size: 1.5em;
+}
+
+.hiddenContainerShowAfterClick {
+    position: absolute;
+    top: 40px;
+    background-color: var(--primary-bg-grey-color);
+    width: 100%;
+    border-radius: 6px;
+    box-shadow: -1px 3px 10px 1px #07070728;
+    padding: 2px 2px;
+    color: black;
+    border: 1px solid var(--primary-border-red);
+    transition: all ease-in 0.5s;
+}
+
+.hiddenContainerShowAfterClick button {
+    margin: 3px 5px;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.9em;
+    margin-top: 5px;
+    font-weight: 500;
+}

@@ -1,0 +1,35 @@
+<div class="dashboardNavigation">
+    <h1>View Bills</h1>
+</div>
+
+<div class="view-bill-container">
+  <app-table-common 
+    [data]="billResponse"
+    [dataField]="billDataField"
+    (filterChanged)="onChangeFilter($event)"
+    (viewItem)="onViewClick($event)"
+    (deleteItem)="handleDelete($event)">
+  </app-table-common>
+
+  <!-- Bill View Dialog -->
+  <div class="bill-view-dialog" *ngIf="showBillView && selectedBill">
+    <div class="bill-view-backdrop" (click)="closeBillView()"></div>
+    <div class="bill-view-content">
+      <div class="bill-view-header">
+        <h2>Bill Details</h2>
+        <button class="close-button" (click)="closeBillView()">
+          <i class="material-icons">close</i>
+        </button>
+      </div>
+      <div class="bill-view-body">
+        <div class="bill-info">
+          <p><strong>Customer Name:</strong> {{selectedBill.customerName || 'N/A'}}</p>
+          <p><strong>Email:</strong> {{selectedBill.email || 'N/A'}}</p>
+          <p><strong>Contact Number:</strong> {{selectedBill.number || 'N/A'}}</p>
+          <p><strong>Payment Method:</strong> {{selectedBill.payment_option || 'N/A'}}</p>
+          <p><strong>Total Amount:</strong> {{selectedBill.total || 'N/A'}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<header class="navbarBg">
+  <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+    <div>
+      <span class="text-red-600 font-bold cafeLogo">Cafe </span>
+      <span class="text-slate-600 cafeLogo font-bold">Management</span>
+    </div>
+    <div class="flex gap-6 mx-4 relative">
+      <div>
+        <button class="userInfoBtn ripple-button" (click)="onChangeNav()">
+          <span class="material-icons">account_circle</span>
+          <p>{{ user }}</p>  <span class="ripple"></span>
+
+        </button>
+      </div>
+      <div *ngIf="isVisible" class="hiddenContainerShowAfterClick">
+        <button (click)="logout()">
+          <span class="material-icons">logout</span>
+          <p>Logout</p>
+        </button>
+      </div>
+    </div>
+  </nav>
+</header>

@@ -1,0 +1,24 @@
+<div class="dashboardNavigation">
+    <h1>Manage Products</h1>
+    <div class="addCategory">
+        <button (click)="handleAdd()"> <i class="material-icons iconMat">add</i><span>Add Product</span></button>
+    </div>
+</div>
+
+<app-table-common 
+    [data]="productResponse"
+    [dataField]="productDataField"
+    (filterChanged)="onChangeFilter($event)"
+    (deleteItem)="handleDelete($event)"
+    (onEdit)="handleEdit($event)">
+</app-table-common>
+
+@if(showProductDialog) {
+<app-product-dialog
+    [isEdit]="isEdit"
+    [productData]="selectedProduct"
+    [categories]="categories"
+    (onClose)="handleDialogClose()"
+    (onSubmit)="handleDialogSubmit($event)">
+</app-product-dialog>
+}

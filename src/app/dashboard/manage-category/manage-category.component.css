@@ -1,0 +1,83 @@
+.dashboardNavigation {
+    padding: 8px 10px;
+    border-radius: 6px;
+    color: black;
+    display: flex;
+    font-weight: 500;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dashboardNavigation h1{
+    font-size: larger;
+}
+
+.filterContainer {
+    background-color: white;
+    margin-top: 20px;
+    padding: 30px;
+    border-radius: 4px;
+}
+
+.filterContainer input {
+    border-bottom: 1px solid black;
+    width: 100%;
+}
+
+.filterContainer input:focus {
+    outline: none;
+}
+
+.tableContainer {
+    background-color: white;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.tableContainer .tableContent tr:nth-child(odd) {
+    background-color: rgba(128, 128, 128, 0.199);
+}
+
+.tableContainer .tableContent {
+    width: 100%;
+}
+
+.tableContainer .tableContent tr {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    transition: all ease-in-out 0.2s;
+
+    &:hover {
+        background-color: rgba(128, 128, 128, 0.199);
+    }
+}
+
+.tableContainer .tableHeader {
+    width: 100%;
+}
+
+.tableContainer .tableHeader tr {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+.tableContainer table tr td {
+    padding: 5px;
+}
+
+.addCategory button{
+    background-color: var(--primary-color-dark-red);
+    color: var(--primary-color-red);
+    padding: 2px 20px;
+    display: flex;
+    align-items: center;
+    justify-content:  center;
+    gap: 5px;
+    font-weight: 400;
+    border: 1px solid var(--primary-color-dark-red);
+    border-radius: 4px;
+    cursor: pointer;
+}

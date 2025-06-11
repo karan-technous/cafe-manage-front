@@ -1,1 +1,127 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'ngx-toastr/toastr';
+
+/* Custom Toast Styles */
+.toast-container {
+  position: fixed;
+  z-index: 9999;
+}
+
+.toast {
+  background-color: var(--primary-color-dark-red);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 16px;
+  margin-bottom: 10px;
+  min-width: 300px;
+  max-width: 350px;
+  border: none;
+}
+
+.toast-success {
+  background-color: var(--primary-color-white);
+  border-left: 4px solid #22c55e;
+}
+
+.toast-error {
+  background-color: var(--primary-color-white);
+  border-left: 4px solid var(--primary-color-red);
+}
+
+.toast-info {
+  background-color: var(--primary-color-white);
+  border-left: 4px solid #3b82f6;
+}
+
+.toast-warning {
+  background-color: var(--primary-color-white);
+  border-left: 4px solid #f59e0b;
+}
+
+.toast-title {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 4px;
+  color: green;
+}
+
+.toast-message {
+  font-size: 14px;
+  color: var(--primary-color-grey);
+}
+
+.toast-close-button {
+  color: var(--primary-color-grey);
+  opacity: 0.7;
+  font-size: 18px;
+  padding: 4px;
+  margin-top: -4px;
+}
+
+.toast-close-button:hover {
+  opacity: 1;
+  /* color: var(--primary-bg-grey-color); */
+}
+
+/* Toast Animation */
+.toast-enter {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+.toast-enter-active {
+  transform: translateX(0);
+  opacity: 1;
+  transition: all 0.3s ease-out;
+}
+
+.toast-exit {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.toast-exit-active {
+  transform: translateX(100%);
+  opacity: 0;
+  transition: all 0.3s ease-in;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari */
+}
+
+
+body {
+  margin: 0;
+  font-family: "Exo", sans-serif;
+  /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+}
+
+.bgSet {
+  background: var(--primary-bg);
+}
+
+* {
+  font-size: 0.99em;
+  /* font-family: "Exo", sans-serif; */
+
+}
+
+:root {
+  --primary-color-red: rgb(255, 134, 20);
+  --primary-color-dark-red: rgba(255, 153, 37, 0.171);
+  --primary-color-white: rgb(255, 255, 255);
+  --primary-color-grey: rgba(128, 128, 128, 0.884);
+  --primary-border-grey-color: rgba(0, 0, 0, 0.178);
+  --primary-bg-grey-color: rgba(255, 255, 255, 0.404);
+  --primary-border-red: rgb(255, 169, 111);
+  --primary-bg-navbar: linear-gradient(93deg, rgba(255, 242, 227, 0.31) 12%, rgba(207, 202, 202, 0.55) 51%, rgba(237, 191, 149, 0.19) 83%);
+  --primary-bg: #dfdfdf;
+  --primary-border-new: #dfdfdf
+}

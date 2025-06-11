@@ -1,0 +1,137 @@
+<div class="tableWrapper relative">
+    <div class="filterContainer">
+        <h1>Showing {{data?.totalElements}} records</h1>
+        <div class="showPagePerAndContainer">
+            <span>Showing</span>
+
+            <select [(ngModel)]="pageSize" (input)="onPageSizeChange($event)">
+                <option [value]="10">10</option>
+                <option [value]="20">20</option>
+                <option [value]="30">30</option>
+                <option [value]="40">40</option>
+                <option [value]="50">50</option>
+            </select>
+
+            <span>per page</span>
+        </div>
+        <div class="relative">
+            <input type="text" placeholder="Filter" (input)="onInputChange($event)" (focus)="mouseEnterForFilter()" />
+            <!-- filterMenu -->
+            @if(visibleFilterMenu){
+            <div [ngClass]="{
+                'filterMenuClass': true,
+                'show': visibleFilterMenu,
+                'hide': !visibleFilterMenu
+            }">
+                <div *ngFor="let item of styledTexts" class="flex items-center gap-2">
+                    <input type="checkbox" [name]="item.text" [value]="item.text" [checked]="item.selected" />
+                    <p class="textRandomColor " [ngStyle]="{
+                    'color': item.color,
+                    'background-color': item.back,
+                    'padding': '1px 5px',
+                    'border-radius': '4px'
+                    }">
+                        {{ item.text }}
+                    </p>
+                </div>
+
+            </div>
+            }
+        </div>
+
+    </div>
+    <table class="customTable">
+        <thead>
+            <tr>
+                @for (data of dataField; track data.key) {
+                <th>{{ data.label }}</th>
+                }
+            </tr>
+        </thead>
+    </table>
+
+    <div class="tableBodyScroll">
+        <table class="customTable">
+            <tbody>
+                @for (row of data.content; track row.id; let rowIndex = $index) {
+                <tr>
+                    @for (column of dataField; track column.key) {
+                    <td>
+                        @if (column.action) {
+                        <div class="flex gap-4 iconsPack">
+                            @if (!column.show) {
+                            <button (click)="onEdit.emit(row)">
+                                <i class="material-icons iconMat">edit</i>
+                            </button>
+                            } @else {
+                            <button (click)="onViewClick(row)">
+                                <i class="material-icons iconMat">visibility</i>
+                            </button>
+                            }
+                            <button (click)="onDeleteClick(row.id, 'delete')">
+                                <i class="material-icons iconMat text-red-600">delete</i>
+                            </button>
+                        </div>
+                        } @else {
+                        @if (column.key === 'id') {
+                        <p>{{ rowIndex + 1 }}</p> <!-- ✅ Correct row index -->
+                        } @else {
+                        {{ row[column.key] }}
+                        }
+                        }
+                    </td>
+                    }
+                </tr>
+                } @empty {
+                <tr>
+                    <td [attr.colspan]="dataField.length" class="no-data">No data found</td>
+                </tr>
+                }
+            </tbody>
+
+        </table>
+    </div>
+
+    <div class="nextPreviousContainer">
+        <h1>Total {{data.totalPages}} of {{data.pageNumber}}</h1>
+        <div class="buttonContainer">
+            @if(data.pageNumber > 1){
+            <button class="prev" (click)="handlePrevbtn()">Previous</button>
+            } @else{
+            <button class="disabledBtn">Previous</button>
+            }
+            @if (data.hasNext) {
+            <button type="button" (click)="handleNextbtn()">Next</button>
+            } @else{
+            <button type="button" class="disabledBtn">Next</button>
+            }
+        </div>
+    </div>
+
+
+
+</div>
+
+<!-- Delete Confirmation Dialog -->
+@if(showDeleteConfirm) {
+<div class="deleteDialogOverlay">
+    <div class="deleteDialog">
+        <div class="deleteDialogHeader">
+            <h2>Confirm Delete</h2>
+        </div>
+        <div class="deleteDialogContent">
+            <p>Are you sure you want to delete this item? This action cannot be undone.</p>
+        </div>
+        <div class="deleteDialogActions">
+            <button class="cancelBtn" (click)="cancelDelete()">Cancel</button>
+            <button class="deleteBtn" (click)="confirmDelete()">Delete</button>
+        </div>
+    </div>
+</div>
+}
+
+<!-- Bill View Dialog -->
+@if(showBillView && selectedRow) {
+<app-bill-view [orderId]="selectedRow.id" (onClose)="closeBillView()">
+</app-bill-view>
+}

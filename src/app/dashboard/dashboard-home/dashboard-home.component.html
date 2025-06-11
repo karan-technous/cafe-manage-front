@@ -1,0 +1,20 @@
+<div class="dashboardNavigation">
+    <h1>Dashboard</h1>
+</div>
+<div class="mainContainerOfDashboard mt-2">
+    <div class="containerOfDash">
+        <h1>Total Category</h1>
+        <p>{{categoryResponse}}</p>
+        <button [routerLink]="'/admin/manage-category'">View Category</button>
+    </div>
+    <div class="containerOfDash">
+        <h1>Total Product</h1>
+        <p>{{productResponse}}</p>
+        <button [routerLink]="'/admin/manage-product'">View Product</button>
+    </div>
+    <div class="containerOfDash">
+        <h1>Total Bill</h1>
+        <p>{{billResponse}}</p>
+        <button [routerLink]="'/admin/view-bill'">View Bill</button>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+<p>listine works!</p>
+<div class="flexClass">
+    <listine-variable-virtual-scroll [items]="option" [buffer]="10" [viewportHeight]="900"
+        [itemTemplate]="itemTemplate">
+        <ng-template #itemTemplate let-option let-i="index">
+            <p>{{ option.label }} (ID: {{ option.value }})</p>
+        </ng-template>
+    </listine-variable-virtual-scroll>
+</div>

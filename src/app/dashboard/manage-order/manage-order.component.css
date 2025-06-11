@@ -1,0 +1,129 @@
+.dashboardNavigation {
+    padding: 10px 10px;
+    border-radius: 6px;
+    color: black;
+    display: flex;
+    font-weight: 500;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dashboardNavigation h1{
+    font-size: larger;
+}
+.containerOfMangeOrder {
+    background-color: var(--primary-bg-grey-color);
+    margin-top: 20px;
+    padding: 10px 10px;
+    border: 1px solid var(--primary-border-grey-color);
+    border-radius: 5px;
+    width: 100%;
+}
+
+.containerOfMangeOrder div {
+    width: 100%;
+    display: flex;
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+
+.containerOfMangeOrder div div input:focus {
+    outline: none;
+    border-bottom: 1px solid red;
+
+}
+
+.containerOfMangeOrder div div input {
+    border-bottom: 1px solid black;
+    width: 90%;
+}
+
+.containerOfMangeOrder div div select {
+    width: 90%;
+    border-bottom: 1px solid black;
+    color: black;
+    transition: all ease 0.2s;
+}
+
+.containerOfMangeOrder div div select:focus {
+    outline: none;
+    border-bottom: 1px solid red;
+}
+
+
+.tableContainer {
+    background-color: white;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.tableContainer .tableContent tr:nth-child(odd) {
+    background-color: rgba(128, 128, 128, 0.199);
+}
+
+.tableContainer .tableContent {
+    width: 100%;
+}
+
+.tableContainer .tableContent tr {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    transition: all ease-in-out 0.2s;
+
+    &:hover {
+        background-color: rgba(128, 128, 128, 0.199);
+    }
+}
+
+.tableContainer .tableHeader {
+    width: 100%;
+}
+
+.tableContainer .tableHeader tr {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+.tableContainer table tr td {
+    padding: 5px;
+}
+
+.disableAddProductBtn{
+    background-color: var(--primary-color-grey);
+    color: var(--primary-color-white);
+    padding: 4px 10px;
+    border: 1px solid var(--primary-border-grey-color);
+    border-radius: 5px;
+    text-transform: capitalize;
+    position: absolute;
+    top: -20px;
+    right: 0;
+    cursor: not-allowed;
+}
+
+
+.enabledAddProductBtn{
+    background-color: var(--primary-color-dark-red);
+    color: var(--primary-color-red);
+    padding: 4px 10px;
+    border: 1px solid var(--primary-border-grey-color);
+    border-radius: 5px;
+    text-transform: capitalize;
+    position: absolute;
+    top: -20px;
+    right: 0;
+    cursor: pointer;
+}
+
+.btnBill{
+    background-color: var(--primary-color-dark-red);
+    border: 1px solid var(--primary-border-grey-color);
+    padding: 4px 10px;
+    font-size: 0.9em;
+    border-radius: 4px;
+    color: var(--primary-color-red);
+    cursor: pointer;
+}

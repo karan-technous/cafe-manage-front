@@ -1,0 +1,23 @@
+<div class="dashboardNavigation">
+    <h1>Manage Categories</h1>
+    <div class="addCategory">
+        <button (click)="handleAdd()"> <i class="material-icons iconMat">add</i><span>Add Category</span></button>
+    </div>
+</div>
+
+<app-table-common 
+    [data]="categoryResponse"
+    [dataField]="categoryDataField"
+    (filterChanged)="onChangeFilter($event)"
+    (deleteItem)="handleDelete($event)"
+    (onEdit)="handleEdit($event)">
+</app-table-common>
+
+@if(showCategoryDialog) {
+<app-category-dialog
+    [isEdit]="isEdit"
+    [categoryData]="selectedCategory"
+    (onClose)="handleDialogClose()"
+    (onSubmit)="handleDialogSubmit($event)">
+</app-category-dialog>
+}

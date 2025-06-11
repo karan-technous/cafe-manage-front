@@ -1,0 +1,39 @@
+<div class="dashboardNavigation">
+    <h1>Manage Order</h1>
+    @if(visibleBtnBill){
+        <button class="btnBill" (click)="handleSubmitAndBill()">Submit & Get Bill</button>
+    }
+</div>
+
+<div class="containerOfMangeOrder">
+    <h1>Customer Details:</h1>
+    <div>
+        <div>
+            <input type="text" name="customerName" placeholder="Name" (input)="onChnageCustomerDetails($event)" required>
+        </div>
+        <div>
+            <input type="text" name="email" placeholder="Email" (input)="onChnageCustomerDetails($event)" required>
+        </div>
+        <div>
+            <input type="text" name="number" placeholder="Contact Number" (input)="onChnageCustomerDetails($event)" required>
+        </div>
+        <div>
+            <select name="payment_option" id="payment_option" (input)="onChnageCustomerDetails($event)">
+                <option name="" class="paymentOption" value="">Select Payment Option</option>
+                <option name="Cash" value="Cash">Cash</option>
+                <option name="Card" value="Card">Card</option>
+                <option name="UPI" value="UPI">UPI</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<div class="containerOfMangeOrder">
+    <h1>Select Product:</h1>
+    <app-product-array
+        [products]="arrayOfProductDetails"
+        [categories]="categories"
+        [allProducts]="products"
+        (productsChange)="onProductsChange($event)">
+    </app-product-array>
+</div>

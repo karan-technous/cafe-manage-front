@@ -1,0 +1,297 @@
+.filterContainer {
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.filterContainer h1 {
+  color: var(--primary-color-grey);
+  font-weight: 500;
+}
+
+.tableWrapper {
+  border: 1px solid var(--primary-border-grey-color);
+  background-color: var(--primary-bg-grey-color);
+  /* box-shadow:inset 6px -1px 10px 0px #80808047; */
+  padding: 10px 10px;
+  border-radius: 7px;
+  margin-top: 10px;
+}
+
+.filterContainer input {
+  padding: 3px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+
+  &&:focus {
+    outline: none;
+  }
+}
+
+.tableContainer {
+  overflow-x: auto;
+}
+
+.customTable {
+  width: 100%;
+  border-collapse: collapse;
+  /* font-family: "Exo", sans-serif; */
+  /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+}
+
+.customTable thead {
+  background-color: rgba(255, 255, 255, 0.26);
+  color: rgba(0, 0, 0, 0.651);
+
+}
+
+.customTable th,
+.customTable td {
+  padding: 10px 16px;
+  text-align: left;
+  min-width: 80px;
+  max-width: 80px;
+  border-bottom: 1px solid #a1a1a138;
+}
+
+.customTable tbody tr td {
+  padding: 5px 10px !important;
+  word-break: break-all;
+}
+
+.customTable tbody tr:nth-child(odd) {
+  transition: all ease-in-out 0.5s;
+}
+
+
+.customTable button {
+  padding: 5px 6px;
+  display: flex;
+  align-items: center;
+  /* background-color: #ff46462f; */
+  color: rgb(88, 88, 88);
+  /* border: 1px solid rgba(128, 128, 128, 0.247); */
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.iconMat {
+  font-size: 20px
+}
+
+/* .customTable button:hover {
+  background-color: #ff595971;
+} */
+
+.no-data {
+  text-align: center;
+  font-style: italic;
+  color: gray;
+}
+
+
+.customTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+
+.tableBodyScroll {
+  max-height: 50vh;
+  overflow-y: auto;
+  min-height: 50vh;
+
+  &&::-webkit-scrollbar {
+    display: none;
+    /* Hides the scrollbar */
+  }
+
+}
+
+.no-data {
+  text-align: center;
+  font-style: italic;
+  color: gray;
+}
+
+.showPagePerAndContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+}
+
+.showPagePerAndContainer select {
+  width: 60px;
+  border: 1px solid rgba(0, 0, 0, 0.253);
+  border-radius: 5px;
+
+  &&:focus {
+    outline: none;
+  }
+}
+
+.nextPreviousContainer {
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4px;
+  gap: 30px;
+  /* padding: 5px 10px; */
+}
+
+.nextPreviousContainer h1 {
+  font-weight: 500;
+  color: rgb(61, 61, 61);
+}
+
+.nextPreviousContainer .buttonContainer {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: right;
+}
+
+.nextPreviousContainer .buttonContainer .disabledBtn {
+  color: var(--primary-color-white);
+  background-color: var(--primary-color-grey);
+}
+
+.nextPreviousContainer .buttonContainer button {
+  /* width: 15%; */
+  background-color: var(--primary-color-dark-red);
+  color: var(--primary-color-red);
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 3px 10px;
+}
+
+.nextPreviousContainer .buttonContainer .prev {
+  color: var(--primary-color-red);
+  background-color: var(--primary-color-dark-red);
+}
+
+/* Delete Dialog Styles */
+.deleteDialogOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.deleteDialog {
+  background-color: white;
+  border-radius: 8px;
+  padding: 24px;
+  width: 400px;
+  border: 1px solid var(--primary-border-red);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.deleteDialogHeader {
+  margin-bottom: 16px;
+}
+
+.deleteDialogHeader h2 {
+  color: #1a1a1a;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.deleteDialogContent {
+  margin-bottom: 24px;
+}
+
+.deleteDialogContent p {
+  color: #4a4a4a;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.deleteDialogActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.deleteDialogActions button {
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid var(--primary-border-grey-color);
+  transition: all 0.2s ease;
+}
+
+.cancelBtn {
+  background-color: var(--primary-color-grey);
+  color: var(--primary-color-white);
+}
+
+.cancelBtn:hover {
+  background-color: var(--primary-bg-grey-color);
+  color: var(--primary-color-red);
+}
+
+.deleteBtn {
+  background-color: var(--primary-color-dark-red);
+  color: var(--primary-color-red);
+  border: none;
+}
+
+.deleteBtn:hover {
+  background-color: var(--primary-bg-grey-color);
+}
+
+.filterMenuClass {
+  position: absolute;
+  top: 30px;
+  width: 100% !important;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  background-color: var(--primary-color-white);
+  border: 1px solid var(--primary-color-dark-red);
+  width: 200px;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 2px 2px 11px var(--primary-border-new);
+  /* Make sure these are set correctly */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  /* Smooth transition */
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.textRandomColor {
+  background: #0026ff87;
+  padding: 0px 10px;
+  color: white;
+  border-radius: 5px;
+}

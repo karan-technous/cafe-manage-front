@@ -1,0 +1,46 @@
+<div class="dashboardNavigation">
+    <h1>Manage Users</h1>
+</div>
+
+<!-- <div class="tableContainer">
+    <table class="tableHeader">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Contact Number</th>
+            <th>Action</th>
+        </tr>
+    </table>
+    <table class="tableContent">
+
+        <tr>
+            <td>name</td>
+            <td>name</td>
+            <td>name</td>
+            <td><button>Edit</button></td>
+        </tr>
+
+        <tr>
+            <td>name</td>
+            <td>name</td>
+            <td>name</td>
+            <td><button>Edit</button></td>
+        </tr>
+
+        <tr>
+            <td>name</td>
+            <td>name</td>
+            <td>name</td>
+            <td><button>Edit</button></td>
+        </tr>
+
+        <tr>
+            <td>name</td>
+            <td>name</td>
+            <td>name</td>
+            <td><button>Edit</button></td>
+        </tr>
+    </table>
+</div> -->
+
+<app-table-common [data]="userResponse" (filterChanged)="onChangeFilter($event)" [dataField]="userDataField"></app-table-common>
