@@ -5,6 +5,7 @@ on:
     branches: ["main"]
   workflow_dispatch:
 
+# ✅ Permissions go here, at the top level
 permissions:
   contents: read
   pages: write
@@ -23,7 +24,7 @@ jobs:
         with:
           node-version: 18
 
-      - name: Install dependencies (Angular 20)
+      - name: Install dependencies
         run: npm install --legacy-peer-deps
 
       - name: Build Angular app
