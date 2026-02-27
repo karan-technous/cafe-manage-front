@@ -27,9 +27,9 @@ jobs:
         run: npm install --legacy-peer-deps
 
       - name: Build Angular
-        run: npm run build -- --configuration production --output-path=dist --base-href "/cafe-manage-front/"
+        run: npm run build -- --configuration production --base-href "/cafe-manage-front/"
 
-      - name: Upload artifact
+      - name: Upload artifact (correct folder)
         uses: actions/upload-pages-artifact@v3
         with:
           path: dist/cafe-mangament-frontend/browser/
